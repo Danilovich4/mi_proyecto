@@ -1,31 +1,20 @@
 """
-Crea un módulo llamado operaciones.py con las siguientes funciones:
-multiplicar(a, b)
-dividir(a, b) (maneja la división por cero).
-Organiza tu proyecto con la siguiente estructura:
-css
-Copiar código
-mi_proyecto/
-    main.py
-    utils/
-        __init__.py
-        operaciones.py
-Importa y usa las funciones de operaciones.py en main.py para:
-Multiplicar dos números ingresados por el usuario.
-Dividir dos números ingresados por el usuario.
+Crea una función llamada mensaje() que imprima "Hola, mundo".
+Crea un decorador que modifique la función para que:
+Imprima "Inicio de la función" antes de ejecutarse.
+Imprima "Fin de la función" después de ejecutarse.
+Aplica el decorador usando @decorar_funcion.
+Ejecuta la función decorada y verifica el comportamiento.
 """
-from utils.operaciones import multiplicar, dividir
+def decorador(funcion):
+    def nueva_funcion ():
+        print("Inicio de la funcion")
+        funcion()
+        print("Fin de la funcion")
+    return nueva_funcion
 
-def main():
-    try:
-        x = int(input("Introduce el primer número: "))
-        y = int(input("Introduce el segundo número: "))
-        # Realizamos las operaciones
-        resultado_multiplicacion = multiplicar(x, y)
-        resultado_division = dividir(x, y)
-        # Mostramos los resultados
-        print(f"Resultados:\nMultiplicación: {resultado_multiplicacion}\nDivisión: {resultado_division}")
-    except ValueError:
-        print("Error: Debes introducir números válidos.")
+@ decorador
+def mensaje ():
+    print("Hola mundo")
 
-main()
+mensaje()

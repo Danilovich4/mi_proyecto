@@ -1,0 +1,4 @@
+#La carpeta __pycache__ es generada automáticamente por Python cuando ejecutas un script. Su propósito es almacenar versiones compiladas (.pyc) de los archivos .py para que el programa se ejecute más rápido en futuras ejecuciones. Sin embargo:No es necesaria en GitHub. Los archivos .pyc son específicos de la máquina donde se generaron.Ocupa espacio innecesario en el repositorio.
+
+__pycache__/
+*.pyc

@@ -7,14 +7,16 @@ Aplica el decorador usando @decorar_funcion.
 Ejecuta la función decorada y verifica el comportamiento.
 """
 def decorador(funcion):
-    def nueva_funcion ():
+    def nueva_funcion (*arg, **kwarg):
         print("Inicio de la funcion")
-        funcion()
+        result = funcion(*arg, **kwarg)
         print("Fin de la funcion")
+        return result
     return nueva_funcion
 
 @ decorador
-def mensaje ():
-    print("Hola mundo")
+def sumar (a, b):
+    sum = a + b
+    print(f"La suma es: {sum}")
 
-mensaje()
+sumar(5,3)
